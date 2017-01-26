@@ -55,7 +55,7 @@ final class FSAlbumView: UIView, UICollectionViewDataSource, UICollectionViewDel
         return UINib(nibName: "FSAlbumView", bundle: Bundle(for: self.classForCoder())).instantiate(withOwner: self, options: nil)[0] as! FSAlbumView
     }
     
-    func initialize() {
+    func initialize(hasVideo: Bool) {
         
         if images != nil {
             
@@ -96,7 +96,7 @@ final class FSAlbumView: UIView, UICollectionViewDataSource, UICollectionViewDel
             NSSortDescriptor(key: "creationDate", ascending: false)
         ]
         
-        images = PHAsset.fetchAssets(with: options)
+        images = hasVideo ? PHAsset.fetchAssets(with: options) : PHAsset.fetchAssets(with: .image, options: options)
         
         if images.count > 0 {
             

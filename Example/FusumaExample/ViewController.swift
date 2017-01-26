@@ -37,7 +37,7 @@ class ViewController: UIViewController, FusumaDelegate {
         fusuma.delegate = self
         fusuma.cropHeightRatio = 0.6
 
-        self.present(fusuma, animated: true, completion: nil)
+        self.present(fusuma, animated: true)
     }
     
     // MARK: FusumaDelegate Protocol

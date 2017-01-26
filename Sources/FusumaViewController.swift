@@ -260,7 +260,7 @@ public class FusumaViewController: UIViewController {
         cameraView.layoutIfNeeded()
 
         
-        albumView.initialize()
+        albumView.initialize(hasVideo: hasVideo)
         cameraView.initialize()
         
         if hasVideo {
