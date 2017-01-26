@@ -330,17 +330,28 @@ public class FusumaViewController: UIViewController {
 
                 let targetSize = CGSize(width: dimensionW, height: dimensionH)
                 
-                PHImageManager.default().requestImage(for: self.albumView.phAsset, targetSize: targetSize,
-                contentMode: .aspectFill, options: options) {
-                    result, info in
-                    
-                    DispatchQueue.main.async(execute: {
-                        self.delegate?.fusumaImageSelected(result!, source: self.mode)
-                        
-                        self.dismiss(animated: true, completion: {
-                            self.delegate?.fusumaDismissedWithImage(result!, source: self.mode)
+                if self.albumView.phAsset.mediaType == .video {
+                    PHImageManager.default().requestAVAsset(forVideo: self.albumView.phAsset, options: nil, resultHandler: { (video, audioMix, info) in
+                        DispatchQueue.main.async(execute: {
+                            let urlAsset = video as! AVURLAsset
+                            self.delegate?.fusumaVideoCompleted(withFileURL: urlAsset.url)
+
+                            self.dismiss(animated: true)
                         })
                     })
+                } else {
+                    PHImageManager.default().requestImage(for: self.albumView.phAsset, targetSize: targetSize,
+                                                          contentMode: .aspectFill, options: options) {
+                                                            result, info in
+                                                            
+                                                            DispatchQueue.main.async(execute: {
+                                                                self.delegate?.fusumaImageSelected(result!, source: self.mode)
+                                                                
+                                                                self.dismiss(animated: true, completion: {
+                                                                    self.delegate?.fusumaDismissedWithImage(result!, source: self.mode)
+                                                                })
+                                                            })
+                    }
                 }
             })
         } else {
