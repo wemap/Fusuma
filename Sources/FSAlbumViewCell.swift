@@ -12,12 +12,17 @@ import Photos
 final class FSAlbumViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var cameraView: UIImageView!
     
     var image: UIImage? {
-        
         didSet {
-            
             self.imageView.image = image            
+        }
+    }
+    
+    var type: PHAssetMediaType = .image {
+        didSet {
+            cameraView.isHidden = type == .video ? false : true
         }
     }
     

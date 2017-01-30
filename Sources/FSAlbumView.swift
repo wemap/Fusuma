@@ -248,16 +248,15 @@ final class FSAlbumView: UIView, UICollectionViewDataSource, UICollectionViewDel
         cell.tag = currentTag
         
         let asset = self.images[(indexPath as NSIndexPath).item]
+        cell.type = asset.mediaType
         self.imageManager?.requestImage(for: asset,
-            targetSize: cellSize,
-            contentMode: .aspectFill,
-            options: nil) {
-                result, info in
-                
-                if cell.tag == currentTag {
-                    cell.image = result
-                }
-                
+                                        targetSize: cellSize,
+                                        contentMode: .aspectFill,
+                                        options: nil) { result, info in
+                                            
+                                            if cell.tag == currentTag {
+                                                cell.image = result
+                                            }
         }
         
         return cell
