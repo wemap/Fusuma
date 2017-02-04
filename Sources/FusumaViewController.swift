@@ -29,7 +29,7 @@ fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
 }
 
 
-public protocol FusumaDelegate: class {
+@objc public protocol FusumaDelegate: class {
     // MARK: Required
     func fusumaImageSelected(_ image: UIImage, source: FusumaMode)
     func fusumaVideoCompleted(withFileURL fileURL: URL)
