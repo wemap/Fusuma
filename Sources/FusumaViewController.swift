@@ -276,7 +276,7 @@ public class FusumaViewController: UIViewController {
         cameraView.layoutIfNeeded()
 
         
-        albumView.initialize()
+        albumView.initialize(hasVideo: hasVideo)
         cameraView.initialize()
         
         if hasVideo {
@@ -346,31 +346,39 @@ public class FusumaViewController: UIViewController {
 
                 let targetSize = CGSize(width: dimensionW, height: dimensionH)
                 
-                PHImageManager.default().requestImage(for: self.albumView.phAsset, targetSize: targetSize,
-                contentMode: .aspectFill, options: options) {
-                    result, info in
-                    
-                    DispatchQueue.main.async(execute: {
-                        self.delegate?.fusumaImageSelected(result!, source: self.mode)
-                        
-                        self.dismiss(animated: true, completion: {
-                            self.delegate?.fusumaDismissedWithImage(result!, source: self.mode)
+                if self.albumView.phAsset.mediaType == .video {
+                    PHImageManager.default().requestAVAsset(forVideo: self.albumView.phAsset, options: nil, resultHandler: { (video, audioMix, info) in
+                        DispatchQueue.main.async(execute: {
+                            let urlAsset = video as! AVURLAsset
+                            self.delegate?.fusumaVideoCompleted(withFileURL: urlAsset.url)
+
+                            self.dismiss(animated: true)
                         })
-
-                        let metaData = ImageMetadata(
-                            mediaType: self.albumView.phAsset.mediaType,
-                            pixelWidth: self.albumView.phAsset.pixelWidth,
-                            pixelHeight: self.albumView.phAsset.pixelHeight,
-                            creationDate: self.albumView.phAsset.creationDate,
-                            modificationDate: self.albumView.phAsset.modificationDate,
-                            location: self.albumView.phAsset.location,
-                            duration: self.albumView.phAsset.duration,
-                            isFavourite: self.albumView.phAsset.isFavorite,
-                            isHidden: self.albumView.phAsset.isHidden)
-
-                        self.delegate?.fusumaImageSelected(result!, source: self.mode, metaData: metaData)
-
                     })
+                } else {
+                    PHImageManager.default().requestImage(for: self.albumView.phAsset, targetSize: targetSize,
+                                                          contentMode: .aspectFill, options: options) {
+                                                            result, info in
+                                                            
+                                                            DispatchQueue.main.async(execute: {
+                                                                let metaData = ImageMetadata(
+                                                                    mediaType: self.albumView.phAsset.mediaType,
+                                                                    pixelWidth: self.albumView.phAsset.pixelWidth,
+                                                                    pixelHeight: self.albumView.phAsset.pixelHeight,
+                                                                    creationDate: self.albumView.phAsset.creationDate,
+                                                                    modificationDate: self.albumView.phAsset.modificationDate,
+                                                                    location: self.albumView.phAsset.location,
+                                                                    duration: self.albumView.phAsset.duration,
+                                                                    isFavourite: self.albumView.phAsset.isFavorite,
+                                                                    isHidden: self.albumView.phAsset.isHidden)
+
+                                                                self.delegate?.fusumaImageSelected(result!, source: self.mode, metaData: metaData)
+                                                                
+                                                                self.dismiss(animated: true, completion: {
+                                                                    self.delegate?.fusumaDismissedWithImage(result!, source: self.mode)
+                                                                })
+                                                            })
+                    }
                 }
             })
         } else {
