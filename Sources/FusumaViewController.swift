@@ -354,20 +354,6 @@ public class FusumaViewController: UIViewController {
 
                             self.dismiss(animated: true)
                         })
-
-                        let metaData = ImageMetadata(
-                            mediaType: self.albumView.phAsset.mediaType,
-                            pixelWidth: self.albumView.phAsset.pixelWidth,
-                            pixelHeight: self.albumView.phAsset.pixelHeight,
-                            creationDate: self.albumView.phAsset.creationDate,
-                            modificationDate: self.albumView.phAsset.modificationDate,
-                            location: self.albumView.phAsset.location,
-                            duration: self.albumView.phAsset.duration,
-                            isFavourite: self.albumView.phAsset.isFavorite,
-                            isHidden: self.albumView.phAsset.isHidden)
-
-                        self.delegate?.fusumaImageSelected(result!, source: self.mode, metaData: metaData)
-
                     })
                 } else {
                     PHImageManager.default().requestImage(for: self.albumView.phAsset, targetSize: targetSize,
@@ -375,7 +361,18 @@ public class FusumaViewController: UIViewController {
                                                             result, info in
                                                             
                                                             DispatchQueue.main.async(execute: {
-                                                                self.delegate?.fusumaImageSelected(result!, source: self.mode)
+                                                                let metaData = ImageMetadata(
+                                                                    mediaType: self.albumView.phAsset.mediaType,
+                                                                    pixelWidth: self.albumView.phAsset.pixelWidth,
+                                                                    pixelHeight: self.albumView.phAsset.pixelHeight,
+                                                                    creationDate: self.albumView.phAsset.creationDate,
+                                                                    modificationDate: self.albumView.phAsset.modificationDate,
+                                                                    location: self.albumView.phAsset.location,
+                                                                    duration: self.albumView.phAsset.duration,
+                                                                    isFavourite: self.albumView.phAsset.isFavorite,
+                                                                    isHidden: self.albumView.phAsset.isHidden)
+
+                                                                self.delegate?.fusumaImageSelected(result!, source: self.mode, metaData: metaData)
                                                                 
                                                                 self.dismiss(animated: true, completion: {
                                                                     self.delegate?.fusumaDismissedWithImage(result!, source: self.mode)
