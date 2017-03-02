@@ -56,9 +56,7 @@ final class FSVideoCameraView: UIView {
         session = AVCaptureSession()
         
         for device in AVCaptureDevice.devices() {
-            
-            if let device = device as? AVCaptureDevice , device.position == AVCaptureDevicePosition.back {
-                
+            if let device = device as? AVCaptureDevice, device.position == AVCaptureDevicePosition.back {
                 self.device = device
             }
         }
@@ -82,6 +80,8 @@ final class FSVideoCameraView: UIView {
                 
                 if session.canAddOutput(videoOutput) {
                     session.addOutput(videoOutput)
+                } else {
+                    print("Could not add video device output to the session")
                 }
                 
                 let videoLayer = AVCaptureVideoPreviewLayer(session: session)
@@ -100,9 +100,25 @@ final class FSVideoCameraView: UIView {
             self.previewViewContainer.addGestureRecognizer(tapRecognizer)
             
         } catch {
-            
+            print("Could not create video device output: \(error)")
         }
         
+        // Add audio input.
+        do {
+            if let session = session {
+                let audioDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeAudio)
+                let audioDeviceInput = try AVCaptureDeviceInput(device: audioDevice)
+                
+                if session.canAddInput(audioDeviceInput) {
+                    session.addInput(audioDeviceInput)
+                } else {
+                    print("Could not add audio device input to the session")
+                }
+            }
+        }
+        catch {
+            print("Could not create audio device input: \(error)")
+        }
         
         let bundle = Bundle(for: self.classForCoder)
         
@@ -138,7 +154,7 @@ final class FSVideoCameraView: UIView {
     }
     
     func startCamera() {
-        
+
         let status = AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo)
         
         if status == AVAuthorizationStatus.authorized {
