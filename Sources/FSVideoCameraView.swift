@@ -262,19 +262,22 @@ final class FSVideoCameraView: UIView {
         
         do {
             
-            if let device = device {
+            if let device = device, device.hasTorch {
                 
                 try device.lockForConfiguration()
                 
                 let mode = device.flashMode
                 
                 if mode == AVCaptureFlashMode.off {
+                    device.torchMode = AVCaptureTorchMode.on
+                    try device.setTorchModeOnWithLevel(1.0)
                     
                     device.flashMode = AVCaptureFlashMode.on
                     flashButton.setImage(flashOnImage, for: UIControlState())
                     
                 } else if mode == AVCaptureFlashMode.on {
                     
+                    device.torchMode = AVCaptureTorchMode.off
                     device.flashMode = AVCaptureFlashMode.off
                     flashButton.setImage(flashOffImage, for: UIControlState())
                 }
