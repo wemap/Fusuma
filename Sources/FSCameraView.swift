@@ -228,20 +228,13 @@ final class FSCameraView: UIView, UIGestureRecognizerDelegate {
                         ih = image.size.height
                     }
                     
-                    // Frame size
-                    let sw = self.previewViewContainer.frame.width
-                    
                     // The center coordinate along Y axis
                     let rcy = ih * 0.5
-
                     let imageRef = image.cgImage?.cropping(to: CGRect(x: rcy-iw*0.5, y: 0 , width: iw, height: iw))
-                    
-                    
                                         
                     DispatchQueue.main.async(execute: { () -> Void in
                         if fusumaCropImage {
-                            let resizedImage = UIImage(cgImage: imageRef!, scale: sw/iw, orientation: image.imageOrientation)
-                            delegate.cameraShotFinished(resizedImage)
+                            delegate.cameraShotFinished(UIImage(cgImage: imageRef!))
                         } else {
                             delegate.cameraShotFinished(image)
                         }
@@ -250,12 +243,9 @@ final class FSCameraView: UIView, UIGestureRecognizerDelegate {
                         self.device        = nil
                         self.imageOutput   = nil
                         self.motionManager = nil
-                        
                     })
                 }
-                
             })
-            
         })
     }
     
