@@ -234,7 +234,7 @@ final class FSCameraView: UIView, UIGestureRecognizerDelegate {
                                         
                     DispatchQueue.main.async(execute: { () -> Void in
                         if fusumaCropImage {
-                            delegate.cameraShotFinished(UIImage(cgImage: imageRef!))
+                            delegate.cameraShotFinished(UIImage(cgImage: imageRef!, scale: 1.0, orientation: image.imageOrientation))
                         } else {
                             delegate.cameraShotFinished(image)
                         }
