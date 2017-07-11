@@ -268,18 +268,24 @@ final class FSVideoCameraView: UIView {
                 
                 let mode = device.flashMode
                 
-                if mode == AVCaptureFlashMode.off {
-                    device.torchMode = AVCaptureTorchMode.on
+                if mode == .off {
+                    device.torchMode = .on
                     try device.setTorchModeOnWithLevel(1.0)
                     
-                    device.flashMode = AVCaptureFlashMode.on
-                    flashButton.setImage(flashOnImage, for: UIControlState())
+                    if device.isFlashModeSupported(.on) {
+                        device.flashMode = .on
+                        flashButton.setImage(flashOnImage, for: UIControlState())
+                    }
                     
-                } else if mode == AVCaptureFlashMode.on {
+                } else
+                if mode == .on {
                     
-                    device.torchMode = AVCaptureTorchMode.off
-                    device.flashMode = AVCaptureFlashMode.off
-                    flashButton.setImage(flashOffImage, for: UIControlState())
+                    device.torchMode = .off
+                    
+                    if device.isFlashModeSupported(.off) {
+                        device.flashMode = .off
+                        flashButton.setImage(flashOffImage, for: UIControlState())
+                    }
                 }
                 
                 device.unlockForConfiguration()
@@ -369,8 +375,10 @@ extension FSVideoCameraView {
                 
                 try device.lockForConfiguration()
                 
-                device.flashMode = AVCaptureFlashMode.off
-                flashButton.setImage(flashOffImage, for: UIControlState())
+                if device.isFlashModeSupported(.off) {
+                    device.flashMode = .off
+                    flashButton.setImage(flashOffImage, for: UIControlState())
+                }
                 
                 device.unlockForConfiguration()
                 

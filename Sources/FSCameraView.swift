@@ -310,15 +310,18 @@ final class FSCameraView: UIView, UIGestureRecognizerDelegate {
                 
                 let mode = device.flashMode
                 
-                if mode == AVCaptureFlashMode.off {
+                if mode == .off {
+                    if device.isFlashModeSupported(.on) {
+                        device.flashMode = .on
+                        flashButton.setImage(flashOnImage, for: UIControlState())
+                    }
                     
-                    device.flashMode = AVCaptureFlashMode.on
-                    flashButton.setImage(flashOnImage, for: UIControlState())
-                    
-                } else if mode == AVCaptureFlashMode.on {
-                    
-                    device.flashMode = AVCaptureFlashMode.off
-                    flashButton.setImage(flashOffImage, for: UIControlState())
+                } else
+                if mode == .on {
+                    if device.isFlashModeSupported(.off) {
+                        device.flashMode = .off
+                        flashButton.setImage(flashOffImage, for: UIControlState())
+                    }
                 }
                 
                 device.unlockForConfiguration()
@@ -396,9 +399,11 @@ extension FSCameraView {
                 
                 try device.lockForConfiguration()
                 
-                device.flashMode = AVCaptureFlashMode.off
-                flashButton.setImage(flashOffImage, for: UIControlState())
-                
+                if device.isFlashModeSupported(.off) {
+                    device.flashMode = .off
+                    flashButton.setImage(flashOffImage, for: UIControlState())
+                }
+
                 device.unlockForConfiguration()
                 
             }
