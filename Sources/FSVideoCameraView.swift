@@ -188,6 +188,20 @@ final class FSVideoCameraView: UIView {
         
         let shotImage: UIImage?
         if self.isRecording {
+            let videoConnection = videoOutput.connection(withMediaType: AVMediaTypeVideo)
+            switch (UIDevice.current.orientation) {
+            case .portrait:
+                videoConnection?.videoOrientation = .portrait
+            case .portraitUpsideDown:
+                videoConnection?.videoOrientation = .portraitUpsideDown
+            case .landscapeRight:
+                videoConnection?.videoOrientation = .landscapeLeft
+            case .landscapeLeft:
+                videoConnection?.videoOrientation = .landscapeRight
+            default:
+                videoConnection?.videoOrientation = .portrait
+            }
+
             shotImage = videoStopImage
         } else {
             shotImage = videoStartImage

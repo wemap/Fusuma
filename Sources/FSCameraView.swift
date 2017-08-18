@@ -25,17 +25,18 @@ final class FSCameraView: UIView, UIGestureRecognizerDelegate {
     
     weak var delegate: FSCameraViewDelegate? = nil
     
-    var session: AVCaptureSession?
-    var device: AVCaptureDevice?
-    var videoInput: AVCaptureDeviceInput?
-    var imageOutput: AVCaptureStillImageOutput?
-    var focusView: UIView?
+    fileprivate var session: AVCaptureSession?
+    fileprivate var device: AVCaptureDevice?
+    fileprivate var videoInput: AVCaptureDeviceInput?
+    fileprivate var imageOutput: AVCaptureStillImageOutput?
+    fileprivate var videoLayer: AVCaptureVideoPreviewLayer?
+    fileprivate var focusView: UIView?
 
-    var flashOffImage: UIImage?
-    var flashOnImage: UIImage?
+    fileprivate var flashOffImage: UIImage?
+    fileprivate var flashOnImage: UIImage?
     
-    var motionManager: CMMotionManager?
-    var currentDeviceOrientation: UIDeviceOrientation?
+    fileprivate var motionManager: CMMotionManager?
+    fileprivate var currentDeviceOrientation: UIDeviceOrientation?
     
     static func instance() -> FSCameraView {
         
@@ -103,7 +104,7 @@ final class FSCameraView: UIView, UIGestureRecognizerDelegate {
                 
                 session.addOutput(imageOutput)
                 
-                let videoLayer = AVCaptureVideoPreviewLayer(session: session)
+                videoLayer = AVCaptureVideoPreviewLayer(session: session)
                 videoLayer?.frame = self.previewViewContainer.bounds
                 videoLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
                 

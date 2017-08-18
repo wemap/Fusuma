@@ -318,41 +318,46 @@ public class FusumaViewController: UIViewController {
             let cropRect = CGRect(x: normalizedX, y: normalizedY, width: normalizedWidth, height: normalizedHeight)
             
             DispatchQueue.global(qos: .default).async(execute: {
-                
-                let options = PHImageRequestOptions()
-                options.deliveryMode = .highQualityFormat
-                options.isNetworkAccessAllowed = true
-                options.normalizedCropRect = cropRect
-                options.resizeMode = .exact
-                
-                let targetWidth = floor(CGFloat(self.albumView.phAsset.pixelWidth) * cropRect.width)
-                let targetHeight = floor(CGFloat(self.albumView.phAsset.pixelHeight) * cropRect.height)
-                let dimensionW = max(min(targetHeight, targetWidth), 1024 * UIScreen.main.scale)
-                let dimensionH = dimensionW * self.getCropHeightRatio()
-
-                let targetSize = CGSize(width: dimensionW, height: dimensionH)
-                
                 if self.albumView.phAsset.mediaType == .video {
-                    PHImageManager.default().requestAVAsset(forVideo: self.albumView.phAsset, options: nil, resultHandler: { (video, audioMix, info) in
-                        DispatchQueue.main.async(execute: {
-                            let urlAsset = video as! AVURLAsset
-                            self.delegate?.fusumaVideoCompleted(withFileURL: urlAsset.url)
+                    let options = PHVideoRequestOptions()
+                    options.version = .current
 
+                    PHImageManager.default().requestExportSession(forVideo: self.albumView.phAsset,
+                                                                  options: options,
+                                                                  exportPreset: AVAssetExportPresetPassthrough,
+                                                                  resultHandler: { session, info in
+                                                                    guard let session = session else { return }
+                        DispatchQueue.main.async(execute: {
+                            let urlAsset = session.asset as! AVURLAsset
+                            self.delegate?.fusumaVideoCompleted(withFileURL: urlAsset.url)
+                            
                             self.dismiss(animated: true)
                         })
                     })
                 } else {
+                    let targetWidth = floor(CGFloat(self.albumView.phAsset.pixelWidth) * cropRect.width)
+                    let targetHeight = floor(CGFloat(self.albumView.phAsset.pixelHeight) * cropRect.height)
+                    let dimensionW = max(min(targetHeight, targetWidth), 1024 * UIScreen.main.scale)
+                    let dimensionH = dimensionW * self.getCropHeightRatio()
+                    let targetSize = CGSize(width: dimensionW, height: dimensionH)
+
+                    let options = PHImageRequestOptions()
+                    options.deliveryMode = .highQualityFormat
+                    options.isNetworkAccessAllowed = true
+                    options.normalizedCropRect = cropRect
+                    options.resizeMode = .exact
+
                     PHImageManager.default().requestImage(for: self.albumView.phAsset, targetSize: targetSize,
                                                           contentMode: .aspectFill, options: options) {
                                                             result, info in
-                                                            
-                                                            DispatchQueue.main.async(execute: {
-                                                                self.delegate?.fusumaImageSelected(result!, source: self.mode)
-                                                                
-                                                                self.dismiss(animated: true, completion: {
-                                                                    self.delegate?.fusumaDismissedWithImage(result!, source: self.mode)
-                                                                })
-                                                            })
+
+                        DispatchQueue.main.async(execute: {
+                            self.delegate?.fusumaImageSelected(result!, source: self.mode)
+                            
+                            self.dismiss(animated: true, completion: {
+                                self.delegate?.fusumaDismissedWithImage(result!, source: self.mode)
+                            })
+                        })
                     }
                 }
             })
@@ -391,6 +396,7 @@ extension FusumaViewController: FSAlbumViewDelegate, FSCameraViewDelegate, FSVid
     
     // MARK: FSAlbumViewDelegate
     public func albumViewCameraRollUnauthorized() {
+        self.updateDoneButtonVisibility()
         delegate?.fusumaCameraRollUnauthorized()
     }
     
