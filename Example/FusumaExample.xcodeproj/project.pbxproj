@@ -7,29 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		12EFF57D1F595FA400D92DF2 /* FSAlbumCircleCropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EFF57C1F595FA400D92DF2 /* FSAlbumCircleCropView.swift */; };
 		52412AC41CA61C9F0073C4BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52412AC31CA61C9F0073C4BE /* AppDelegate.swift */; };
 		52412AC61CA61C9F0073C4BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52412AC51CA61C9F0073C4BE /* ViewController.swift */; };
 		52412AC91CA61C9F0073C4BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52412AC71CA61C9F0073C4BE /* Main.storyboard */; };
 		52412ACB1CA61C9F0073C4BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52412ACA1CA61C9F0073C4BE /* Assets.xcassets */; };
 		52412ACE1CA61C9F0073C4BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52412ACC1CA61C9F0073C4BE /* LaunchScreen.storyboard */; };
-		D77CA2991CBBDEB300C4BAC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D77CA28E1CBBDEB300C4BAC4 /* Assets.xcassets */; };
-		D77CA29A1CBBDEB300C4BAC4 /* FSAlbumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77CA28F1CBBDEB300C4BAC4 /* FSAlbumView.swift */; };
-		D77CA29B1CBBDEB300C4BAC4 /* FSAlbumView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D77CA2901CBBDEB300C4BAC4 /* FSAlbumView.xib */; };
-		D77CA29C1CBBDEB300C4BAC4 /* FSAlbumViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77CA2911CBBDEB300C4BAC4 /* FSAlbumViewCell.swift */; };
-		D77CA29D1CBBDEB300C4BAC4 /* FSAlbumViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D77CA2921CBBDEB300C4BAC4 /* FSAlbumViewCell.xib */; };
-		D77CA29E1CBBDEB300C4BAC4 /* FSCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77CA2931CBBDEB300C4BAC4 /* FSCameraView.swift */; };
-		D77CA29F1CBBDEB300C4BAC4 /* FSCameraView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D77CA2941CBBDEB300C4BAC4 /* FSCameraView.xib */; };
-		D77CA2A01CBBDEB300C4BAC4 /* FSConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77CA2951CBBDEB300C4BAC4 /* FSConstants.swift */; };
-		D77CA2A11CBBDEB300C4BAC4 /* FSImageCropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77CA2961CBBDEB300C4BAC4 /* FSImageCropView.swift */; };
-		D77CA2A21CBBDEB300C4BAC4 /* FusumaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77CA2971CBBDEB300C4BAC4 /* FusumaViewController.swift */; };
-		D77CA2A31CBBDEB300C4BAC4 /* FusumaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D77CA2981CBBDEB300C4BAC4 /* FusumaViewController.xib */; };
-		EDDC0B421D04FA14009135DB /* FSVideoCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDC0B401D04FA14009135DB /* FSVideoCameraView.swift */; };
-		EDDC0B431D04FA14009135DB /* FSVideoCameraView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDDC0B411D04FA14009135DB /* FSVideoCameraView.xib */; };
+		C26F0A01C62C5F8E4DA437DF /* Pods_FusumaExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81B33B0DEB81DA31E1FB4FDA /* Pods_FusumaExample.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		12EFF57C1F595FA400D92DF2 /* FSAlbumCircleCropView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSAlbumCircleCropView.swift; sourceTree = "<group>"; };
 		52412AC01CA61C9F0073C4BE /* FusumaExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FusumaExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52412AC31CA61C9F0073C4BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52412AC51CA61C9F0073C4BE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -37,19 +23,9 @@
 		52412ACA1CA61C9F0073C4BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52412ACD1CA61C9F0073C4BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52412ACF1CA61C9F0073C4BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D77CA28E1CBBDEB300C4BAC4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D77CA28F1CBBDEB300C4BAC4 /* FSAlbumView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSAlbumView.swift; sourceTree = "<group>"; };
-		D77CA2901CBBDEB300C4BAC4 /* FSAlbumView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FSAlbumView.xib; sourceTree = "<group>"; };
-		D77CA2911CBBDEB300C4BAC4 /* FSAlbumViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSAlbumViewCell.swift; sourceTree = "<group>"; };
-		D77CA2921CBBDEB300C4BAC4 /* FSAlbumViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FSAlbumViewCell.xib; sourceTree = "<group>"; };
-		D77CA2931CBBDEB300C4BAC4 /* FSCameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSCameraView.swift; sourceTree = "<group>"; };
-		D77CA2941CBBDEB300C4BAC4 /* FSCameraView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FSCameraView.xib; sourceTree = "<group>"; };
-		D77CA2951CBBDEB300C4BAC4 /* FSConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSConstants.swift; sourceTree = "<group>"; };
-		D77CA2961CBBDEB300C4BAC4 /* FSImageCropView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSImageCropView.swift; sourceTree = "<group>"; };
-		D77CA2971CBBDEB300C4BAC4 /* FusumaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FusumaViewController.swift; sourceTree = "<group>"; };
-		D77CA2981CBBDEB300C4BAC4 /* FusumaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FusumaViewController.xib; sourceTree = "<group>"; };
-		EDDC0B401D04FA14009135DB /* FSVideoCameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSVideoCameraView.swift; sourceTree = "<group>"; };
-		EDDC0B411D04FA14009135DB /* FSVideoCameraView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FSVideoCameraView.xib; sourceTree = "<group>"; };
+		81B33B0DEB81DA31E1FB4FDA /* Pods_FusumaExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FusumaExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C67A971520B27A4DC3676701 /* Pods-FusumaExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FusumaExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FusumaExample/Pods-FusumaExample.debug.xcconfig"; sourceTree = "<group>"; };
+		E36708C0F50A4BE48BB978E3 /* Pods-FusumaExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FusumaExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-FusumaExample/Pods-FusumaExample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,17 +33,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C26F0A01C62C5F8E4DA437DF /* Pods_FusumaExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00B81F173E091370ACF4D47E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				81B33B0DEB81DA31E1FB4FDA /* Pods_FusumaExample.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		52412AB71CA61C9F0073C4BE = {
 			isa = PBXGroup;
 			children = (
 				52412AC21CA61C9F0073C4BE /* FusumaExample */,
 				52412AC11CA61C9F0073C4BE /* Products */,
+				ED73B8B8D7B2CD1F90DCB864 /* Pods */,
+				00B81F173E091370ACF4D47E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -82,7 +69,6 @@
 		52412AC21CA61C9F0073C4BE /* FusumaExample */ = {
 			isa = PBXGroup;
 			children = (
-				D77CA28D1CBBDEB300C4BAC4 /* Sources */,
 				52412AC31CA61C9F0073C4BE /* AppDelegate.swift */,
 				52412AC51CA61C9F0073C4BE /* ViewController.swift */,
 				52412AC71CA61C9F0073C4BE /* Main.storyboard */,
@@ -93,26 +79,13 @@
 			path = FusumaExample;
 			sourceTree = "<group>";
 		};
-		D77CA28D1CBBDEB300C4BAC4 /* Sources */ = {
+		ED73B8B8D7B2CD1F90DCB864 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				D77CA28E1CBBDEB300C4BAC4 /* Assets.xcassets */,
-				D77CA28F1CBBDEB300C4BAC4 /* FSAlbumView.swift */,
-				12EFF57C1F595FA400D92DF2 /* FSAlbumCircleCropView.swift */,
-				D77CA2901CBBDEB300C4BAC4 /* FSAlbumView.xib */,
-				D77CA2911CBBDEB300C4BAC4 /* FSAlbumViewCell.swift */,
-				D77CA2921CBBDEB300C4BAC4 /* FSAlbumViewCell.xib */,
-				D77CA2931CBBDEB300C4BAC4 /* FSCameraView.swift */,
-				D77CA2941CBBDEB300C4BAC4 /* FSCameraView.xib */,
-				D77CA2951CBBDEB300C4BAC4 /* FSConstants.swift */,
-				D77CA2961CBBDEB300C4BAC4 /* FSImageCropView.swift */,
-				D77CA2971CBBDEB300C4BAC4 /* FusumaViewController.swift */,
-				D77CA2981CBBDEB300C4BAC4 /* FusumaViewController.xib */,
-				EDDC0B401D04FA14009135DB /* FSVideoCameraView.swift */,
-				EDDC0B411D04FA14009135DB /* FSVideoCameraView.xib */,
+				C67A971520B27A4DC3676701 /* Pods-FusumaExample.debug.xcconfig */,
+				E36708C0F50A4BE48BB978E3 /* Pods-FusumaExample.release.xcconfig */,
 			);
-			name = Sources;
-			path = ../../Sources;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52412AD21CA61C9F0073C4BE /* Build configuration list for PBXNativeTarget "FusumaExample" */;
 			buildPhases = (
+				26FDCB2FBB7227ED868379A3 /* [CP] Check Pods Manifest.lock */,
 				52412ABC1CA61C9F0073C4BE /* Sources */,
 				52412ABD1CA61C9F0073C4BE /* Frameworks */,
 				52412ABE1CA61C9F0073C4BE /* Resources */,
+				F3861906B728B7A5CF8341A1 /* [CP] Embed Pods Frameworks */,
+				FB8B24C06F66F6071B77C74A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -174,19 +150,67 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDDC0B431D04FA14009135DB /* FSVideoCameraView.xib in Resources */,
-				D77CA29B1CBBDEB300C4BAC4 /* FSAlbumView.xib in Resources */,
-				D77CA2A31CBBDEB300C4BAC4 /* FusumaViewController.xib in Resources */,
 				52412ACE1CA61C9F0073C4BE /* LaunchScreen.storyboard in Resources */,
-				D77CA29F1CBBDEB300C4BAC4 /* FSCameraView.xib in Resources */,
 				52412ACB1CA61C9F0073C4BE /* Assets.xcassets in Resources */,
-				D77CA29D1CBBDEB300C4BAC4 /* FSAlbumViewCell.xib in Resources */,
-				D77CA2991CBBDEB300C4BAC4 /* Assets.xcassets in Resources */,
 				52412AC91CA61C9F0073C4BE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		26FDCB2FBB7227ED868379A3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FusumaExample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F3861906B728B7A5CF8341A1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FusumaExample/Pods-FusumaExample-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Fusuma/Fusuma.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Fusuma.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FusumaExample/Pods-FusumaExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FB8B24C06F66F6071B77C74A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FusumaExample/Pods-FusumaExample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		52412ABC1CA61C9F0073C4BE /* Sources */ = {
@@ -194,15 +218,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52412AC61CA61C9F0073C4BE /* ViewController.swift in Sources */,
-				EDDC0B421D04FA14009135DB /* FSVideoCameraView.swift in Sources */,
-				D77CA29E1CBBDEB300C4BAC4 /* FSCameraView.swift in Sources */,
-				12EFF57D1F595FA400D92DF2 /* FSAlbumCircleCropView.swift in Sources */,
-				D77CA29C1CBBDEB300C4BAC4 /* FSAlbumViewCell.swift in Sources */,
-				D77CA29A1CBBDEB300C4BAC4 /* FSAlbumView.swift in Sources */,
-				D77CA2A01CBBDEB300C4BAC4 /* FSConstants.swift in Sources */,
-				D77CA2A21CBBDEB300C4BAC4 /* FusumaViewController.swift in Sources */,
 				52412AC41CA61C9F0073C4BE /* AppDelegate.swift in Sources */,
-				D77CA2A11CBBDEB300C4BAC4 /* FSImageCropView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +338,7 @@
 		};
 		52412AD31CA61C9F0073C4BE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C67A971520B27A4DC3676701 /* Pods-FusumaExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 64DXV5M5R8;
@@ -336,6 +353,7 @@
 		};
 		52412AD41CA61C9F0073C4BE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E36708C0F50A4BE48BB978E3 /* Pods-FusumaExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 64DXV5M5R8;
