@@ -32,10 +32,12 @@ class ViewController: UIViewController, FusumaDelegate {
         // Show Fusuma
         let fusuma = FusumaViewController()
         
-        //        fusumaCropImage = false
+        fusumaCropImage = true
+        fusumaCropMode = .circle
+
         fusuma.hasVideo = true
         fusuma.delegate = self
-        fusuma.cropHeightRatio = 0.6
+//        fusuma.cropHeightRatio = 0.6
 
         self.present(fusuma, animated: true)
     }

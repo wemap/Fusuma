@@ -22,6 +22,7 @@ final class FSAlbumView: UIView, UICollectionViewDataSource, UICollectionViewDel
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var imageCropView: FSImageCropView!
     @IBOutlet weak var imageCropViewContainer: UIView!
+    @IBOutlet weak var circleCropView: FSAlbumCircleCropView!
     
     @IBOutlet weak var collectionViewConstraintHeight: NSLayoutConstraint!
     @IBOutlet weak var imageCropViewConstraintTop: NSLayoutConstraint!
@@ -66,7 +67,13 @@ final class FSAlbumView: UIView, UICollectionViewDataSource, UICollectionViewDel
 
         // Set Image Crop Ratio
         if let heightRatio = delegate?.getCropHeightRatio() {
-            imageCropViewContainer.addConstraint(NSLayoutConstraint(item: imageCropViewContainer, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: imageCropViewContainer, attribute: NSLayoutAttribute.width, multiplier: heightRatio, constant: 0)
+            imageCropViewContainer.addConstraint(NSLayoutConstraint(item: imageCropViewContainer,
+                                                                    attribute: .height,
+                                                                    relatedBy: .equal,
+                                                                    toItem: imageCropViewContainer,
+                                                                    attribute: .width,
+                                                                    multiplier: heightRatio,
+                                                                    constant: 0)
             )
             layoutSubviews()
         }
@@ -164,15 +171,18 @@ final class FSAlbumView: UIView, UICollectionViewDataSource, UICollectionViewDel
             
             if dragDirection == Direction.up && currentPos.y < cropBottomY - dragDiff {
                 
-                imageCropViewConstraintTop.constant = max(imageCropViewMinimalVisibleHeight - self.imageCropViewContainer.frame.height, currentPos.y + dragDiff - imageCropViewContainer.frame.height)
+                imageCropViewConstraintTop.constant = max(imageCropViewMinimalVisibleHeight - self.imageCropViewContainer.frame.height,
+                                                          currentPos.y + dragDiff - imageCropViewContainer.frame.height)
                 
-                collectionViewConstraintHeight.constant = min(self.frame.height - imageCropViewMinimalVisibleHeight, self.frame.height - imageCropViewConstraintTop.constant - imageCropViewContainer.frame.height)
+                collectionViewConstraintHeight.constant = min(self.frame.height - imageCropViewMinimalVisibleHeight,
+                                                              self.frame.height - imageCropViewConstraintTop.constant - imageCropViewContainer.frame.height)
                 
             } else if dragDirection == Direction.down && currentPos.y > cropBottomY {
                 
                 imageCropViewConstraintTop.constant = min(imageCropViewOriginalConstraintTop, currentPos.y - imageCropViewContainer.frame.height)
                 
-                collectionViewConstraintHeight.constant = max(self.frame.height - imageCropViewOriginalConstraintTop - imageCropViewContainer.frame.height, self.frame.height - imageCropViewConstraintTop.constant - imageCropViewContainer.frame.height)
+                collectionViewConstraintHeight.constant = max(self.frame.height - imageCropViewOriginalConstraintTop - imageCropViewContainer.frame.height,
+                                                              self.frame.height - imageCropViewConstraintTop.constant - imageCropViewContainer.frame.height)
                 
             } else if dragDirection == Direction.stop && collectionView.contentOffset.y < 0 {
                 
@@ -183,7 +193,8 @@ final class FSAlbumView: UIView, UICollectionViewDataSource, UICollectionViewDel
                 
                 imageCropViewConstraintTop.constant = imageCropViewMinimalVisibleHeight - self.imageCropViewContainer.frame.height + currentPos.y - imaginaryCollectionViewOffsetStartPosY
                 
-                collectionViewConstraintHeight.constant = max(self.frame.height - imageCropViewOriginalConstraintTop - imageCropViewContainer.frame.height, self.frame.height - imageCropViewConstraintTop.constant - imageCropViewContainer.frame.height)
+                collectionViewConstraintHeight.constant = max(self.frame.height - imageCropViewOriginalConstraintTop - imageCropViewContainer.frame.height,
+                                                              self.frame.height - imageCropViewConstraintTop.constant - imageCropViewContainer.frame.height)
                 
             }
             

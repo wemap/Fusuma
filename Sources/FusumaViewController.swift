@@ -65,6 +65,7 @@ public var fusumaVideoStartImage : UIImage? = nil
 public var fusumaVideoStopImage : UIImage? = nil
 
 public var fusumaCropImage: Bool = true
+public var fusumaCropMode: FusumaCropMode = .rectangle
 
 public var fusumaCameraRollTitle = "CAMERA ROLL"
 public var fusumaCameraTitle = "PHOTO"
@@ -76,6 +77,11 @@ public var fusumaTintIcons : Bool = true
 public enum FusumaModeOrder {
     case cameraFirst
     case libraryFirst
+}
+
+public enum FusumaCropMode {
+    case rectangle
+    case circle
 }
 
 public enum FusumaMode {
@@ -238,8 +244,13 @@ public class FusumaViewController: UIViewController {
         
         if fusumaCropImage {
             let heightRatio = getCropHeightRatio()
-            cameraView.croppedAspectRatioConstraint = NSLayoutConstraint(item: cameraView.previewViewContainer, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: cameraView.previewViewContainer, attribute: NSLayoutAttribute.width, multiplier: heightRatio, constant: 0)
-
+            cameraView.croppedAspectRatioConstraint = NSLayoutConstraint(item: cameraView.previewViewContainer,
+                                                                         attribute: .height,
+                                                                         relatedBy: .equal,
+                                                                         toItem: cameraView.previewViewContainer,
+                                                                         attribute: .width,
+                                                                         multiplier: heightRatio,
+                                                                         constant: 0)
             cameraView.fullAspectRatioConstraint.isActive = false
             cameraView.croppedAspectRatioConstraint?.isActive = true
         } else {
@@ -306,67 +317,35 @@ public class FusumaViewController: UIViewController {
     }
     
     @IBAction func doneButtonPressed(_ sender: UIButton) {
-        let view = albumView.imageCropView
+        guard let view = albumView.imageCropView else { return }
 
         if fusumaCropImage {
-            let normalizedX = (view?.contentOffset.x)! / (view?.contentSize.width)!
-            let normalizedY = (view?.contentOffset.y)! / (view?.contentSize.height)!
-            
-            let normalizedWidth = (view?.frame.width)! / (view?.contentSize.width)!
-            let normalizedHeight = (view?.frame.height)! / (view?.contentSize.height)!
-            
-            let cropRect = CGRect(x: normalizedX, y: normalizedY, width: normalizedWidth, height: normalizedHeight)
-            
-            DispatchQueue.global(qos: .default).async(execute: {
-                if self.albumView.phAsset.mediaType == .video {
-                    let options = PHVideoRequestOptions()
-                    options.version = .current
+            view.croppedImage(phAsset: albumView.phAsset, cropHeightRatio: cropHeightRatio,
+                              completion: { video, image in
+                                DispatchQueue.main.async(execute: { [weak self]  in
+                                    guard let welf = self else { return }
 
-                    PHImageManager.default().requestExportSession(forVideo: self.albumView.phAsset,
-                                                                  options: options,
-                                                                  exportPreset: AVAssetExportPresetPassthrough,
-                                                                  resultHandler: { session, info in
-                                                                    guard let session = session else { return }
-                        DispatchQueue.main.async(execute: {
-                            let urlAsset = session.asset as! AVURLAsset
-                            self.delegate?.fusumaVideoCompleted(withFileURL: urlAsset.url)
-                            
-                            self.dismiss(animated: true)
-                        })
-                    })
-                } else {
-                    let targetWidth = floor(CGFloat(self.albumView.phAsset.pixelWidth) * cropRect.width)
-                    let targetHeight = floor(CGFloat(self.albumView.phAsset.pixelHeight) * cropRect.height)
-                    let dimensionW = max(min(targetHeight, targetWidth), 1024 * UIScreen.main.scale)
-                    let dimensionH = dimensionW * self.getCropHeightRatio()
-                    let targetSize = CGSize(width: dimensionW, height: dimensionH)
+                                    if video != nil {
+                                        welf.delegate?.fusumaVideoCompleted(withFileURL: video!.url)
+                                        welf.dismiss(animated: true)
+                                    }
+                                    else
+                                    if image != nil {
+                                        welf.delegate?.fusumaImageSelected(image!, source: welf.mode)
 
-                    let options = PHImageRequestOptions()
-                    options.deliveryMode = .highQualityFormat
-                    options.isNetworkAccessAllowed = true
-                    options.normalizedCropRect = cropRect
-                    options.resizeMode = .exact
-
-                    PHImageManager.default().requestImage(for: self.albumView.phAsset, targetSize: targetSize,
-                                                          contentMode: .aspectFill, options: options) {
-                                                            result, info in
-
-                        DispatchQueue.main.async(execute: {
-                            self.delegate?.fusumaImageSelected(result!, source: self.mode)
-                            
-                            self.dismiss(animated: true, completion: {
-                                self.delegate?.fusumaDismissedWithImage(result!, source: self.mode)
-                            })
-                        })
-                    }
-                }
+                                        welf.dismiss(animated: true,
+                                                     completion: {
+                                                        welf.delegate?.fusumaDismissedWithImage(image!, source: welf.mode)
+                                        })
+                                    }
+                                })
             })
         } else {
             print("no image crop ")
-            delegate?.fusumaImageSelected((view?.image)!, source: mode)
-            
+            delegate?.fusumaImageSelected(view.image, source: mode)
+
             self.dismiss(animated: true, completion: {
-                self.delegate?.fusumaDismissedWithImage((view?.image)!, source: self.mode)
+                self.delegate?.fusumaDismissedWithImage(view.image, source: self.mode)
             })
         }
     }
