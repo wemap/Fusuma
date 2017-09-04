@@ -34,7 +34,7 @@ class ViewController: UIViewController, FusumaDelegate {
         let fusuma = FusumaViewController()
         
         fusumaCropImage = true
-        fusumaCropMode = .circle
+//        fusumaCropMode = .circle
 
         fusuma.hasVideo = true
         fusuma.delegate = self

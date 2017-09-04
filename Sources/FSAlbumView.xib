@@ -50,7 +50,7 @@
                         <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mc5-1c-z7q" customClass="FSImageCropView" customModule="Fusuma" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
                         </scrollView>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fyk-Kn-bjq" customClass="FSAlbumCircleCropView" customModule="Fusuma" customModuleProvider="target">
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fyk-Kn-bjq" customClass="FSAlbumCircleCropView" customModule="Fusuma" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </view>
@@ -82,6 +82,7 @@
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="circleCropView" destination="Fyk-Kn-bjq" id="Aky-PO-jIU"/>
                 <outlet property="collectionView" destination="6id-Ro-HHC" id="NDT-3i-ayr"/>
                 <outlet property="collectionViewConstraintHeight" destination="ofF-eS-Nvv" id="wTG-jf-uwE"/>
                 <outlet property="imageCropView" destination="Mc5-1c-z7q" id="oCj-GQ-fQS"/>

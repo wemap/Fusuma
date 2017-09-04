@@ -22,6 +22,7 @@ final class FSAlbumView: UIView, UICollectionViewDataSource, UICollectionViewDel
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var imageCropView: FSImageCropView!
     @IBOutlet weak var imageCropViewContainer: UIView!
+    @IBOutlet weak var circleCropView: FSAlbumCircleCropView!
     
     @IBOutlet weak var collectionViewConstraintHeight: NSLayoutConstraint!
     @IBOutlet weak var imageCropViewConstraintTop: NSLayoutConstraint!
@@ -63,6 +64,8 @@ final class FSAlbumView: UIView, UICollectionViewDataSource, UICollectionViewDel
         }
 		
 		self.isHidden = false
+        
+        circleCropView.isHidden = fusumaCropMode == .rectangle
 
         // Set Image Crop Ratio
         if let heightRatio = delegate?.getCropHeightRatio() {

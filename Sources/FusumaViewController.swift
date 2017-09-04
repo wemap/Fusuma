@@ -259,11 +259,6 @@ public class FusumaViewController: UIViewController {
         }
     }
     
-    override public func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-    }
-
     override public func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
