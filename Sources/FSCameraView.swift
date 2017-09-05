@@ -23,6 +23,8 @@ final class FSCameraView: UIView, UIGestureRecognizerDelegate {
     @IBOutlet weak var fullAspectRatioConstraint: NSLayoutConstraint!
     var croppedAspectRatioConstraint: NSLayoutConstraint?
     
+    @IBOutlet weak var circleCropView: FSAlbumCircleCropView!
+    
     weak var delegate: FSCameraViewDelegate? = nil
     
     fileprivate var session: AVCaptureSession?
@@ -50,6 +52,7 @@ final class FSCameraView: UIView, UIGestureRecognizerDelegate {
             return
         }
         
+        circleCropView.isHidden = fusumaCropMode == .rectangle
         self.backgroundColor = fusumaBackgroundColor
         
         let bundle = Bundle(for: self.classForCoder)

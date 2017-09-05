@@ -90,7 +90,6 @@ public enum FusumaMode {
     case video
 }
 
-//@objc public class FusumaViewController: UIViewController, FSCameraViewDelegate, FSAlbumViewDelegate {
 public class FusumaViewController: UIViewController {
 
     public var hasVideo = false
@@ -354,11 +353,15 @@ extension FusumaViewController: FSAlbumViewDelegate, FSCameraViewDelegate, FSVid
     
     // MARK: FSCameraViewDelegate
     func cameraShotFinished(_ image: UIImage) {
-        
-        delegate?.fusumaImageSelected(image, source: mode)
+        var out_img = image
+        if fusumaCropImage && fusumaCropMode == .circle {
+            print("\(#function)")
+            out_img = image.cropCircle(size: image.size) ?? image
+        }
+
+        delegate?.fusumaImageSelected(out_img, source: mode)
         self.dismiss(animated: true, completion: {
-            
-            self.delegate?.fusumaDismissedWithImage(image, source: self.mode)
+            self.delegate?.fusumaDismissedWithImage(out_img, source: self.mode)
         })
     }
     

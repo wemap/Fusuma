@@ -10,8 +10,6 @@ import UIKit
 import Photos
 
 final class FSImageCropView: UIScrollView {
-//    fileprivate let overlayView = UIView(frame: CGRect.zero)
-
     var imageView = UIImageView()
     var imageSize: CGSize?
     var image: UIImage! = nil {
@@ -103,9 +101,8 @@ final class FSImageCropView: UIScrollView {
                                   targetSize: targetSize,
                                   contentMode: .aspectFill,
                                   options: options,
-                                  resultHandler: { [weak self] result, _ in
-                                    completion(nil, fusumaCropMode == .circle ? self?.cropCircle(image: result,
-                                                                                                size: targetSize)
+                                  resultHandler: { result, _ in
+                                    completion(nil, fusumaCropMode == .circle ? result?.cropCircle(size: targetSize)
                                                                               : result)
                 })
             }
@@ -125,7 +122,6 @@ final class FSImageCropView: UIScrollView {
         UIGraphicsEndImageContext()
         return finalImage
     }
-
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
