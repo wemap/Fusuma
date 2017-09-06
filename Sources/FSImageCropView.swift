@@ -64,7 +64,7 @@ final class FSImageCropView: UIScrollView {
     
     func croppedImage(phAsset: PHAsset,
                       cropHeightRatio: CGFloat,
-                      completion: @escaping ((_ video: AVURLAsset?, _ image: UIImage?) -> Void)) {
+                      completion: @escaping ((_ video: AVAsset?, _ image: UIImage?) -> Void)) {
         let normalizedX = contentOffset.x / contentSize.width
         let normalizedY = contentOffset.y / contentSize.height
         let normalizedWidth = frame.width / contentSize.width
@@ -81,7 +81,7 @@ final class FSImageCropView: UIScrollView {
                                           options: options,
                                           exportPreset: AVAssetExportPresetPassthrough,
                                           resultHandler: { session, _ in
-                                            completion(session?.asset as? AVURLAsset, nil)
+                                            completion(session?.asset, nil)
                 })
             } else {
                 let targetWidth = floor(CGFloat(phAsset.pixelWidth) * cropRect.width)

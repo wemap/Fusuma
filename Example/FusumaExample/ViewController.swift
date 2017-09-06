@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import AVFoundation
 import Fusuma
 
-class ViewController: UIViewController, FusumaDelegate {
+class ViewController: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView!
     
@@ -34,7 +35,7 @@ class ViewController: UIViewController, FusumaDelegate {
         let fusuma = FusumaViewController()
         
         fusumaCropImage = true
-        fusumaCropMode = .circle
+//        fusumaCropMode = .circle
 
         fusuma.hasVideo = true
         fusuma.delegate = self
@@ -42,7 +43,9 @@ class ViewController: UIViewController, FusumaDelegate {
 
         self.present(fusuma, animated: true)
     }
-    
+}
+
+extension ViewController: FusumaDelegate {
     // MARK: FusumaDelegate Protocol
     func fusumaImageSelected(_ image: UIImage, source: FusumaMode) {
         switch source {
@@ -57,9 +60,9 @@ class ViewController: UIViewController, FusumaDelegate {
         imageView.image = image
     }
     
-    func fusumaVideoCompleted(withFileURL fileURL: URL) {
-        print("video completed and output to file: \(fileURL)")
-        self.fileUrlLabel.text = "file output to: \(fileURL.absoluteString)"
+    func fusumaVideoCompleted(_ video: AVAsset) {
+        print("video completed ")
+        self.fileUrlLabel.text = "video completed: \(video)"
     }
     
     func fusumaDismissedWithImage(_ image: UIImage, source: FusumaMode) {
