@@ -53,14 +53,13 @@ final class FSCameraView: UIView, UIGestureRecognizerDelegate {
         }
         
         circleCropView.isHidden = fusumaCropMode == .rectangle
-        self.backgroundColor = fusumaBackgroundColor
-        
+
         let bundle = Bundle(for: self.classForCoder)
-        
-        flashOnImage = fusumaFlashOnImage != nil ? fusumaFlashOnImage : UIImage(named: "ic_flash_on", in: bundle, compatibleWith: nil)
-        flashOffImage = fusumaFlashOffImage != nil ? fusumaFlashOffImage : UIImage(named: "ic_flash_off", in: bundle, compatibleWith: nil)
-        let flipImage = fusumaFlipImage != nil ? fusumaFlipImage : UIImage(named: "ic_loop", in: bundle, compatibleWith: nil)
-        let shotImage = fusumaShotImage != nil ? fusumaShotImage : UIImage(named: "ic_radio_button_checked", in: bundle, compatibleWith: nil)
+
+        flashOnImage = fusumaFlashOnImage != nil ? fusumaFlashOnImage : UIImage(named: "ic_flash_on_white_48pt", in: bundle, compatibleWith: nil)
+        flashOffImage = fusumaFlashOffImage != nil ? fusumaFlashOffImage : UIImage(named: "ic_flash_off_white_48pt", in: bundle, compatibleWith: nil)
+        let flipImage = fusumaFlipImage != nil ? fusumaFlipImage : UIImage(named: "ic_loop_white_48pt", in: bundle, compatibleWith: nil)
+        let shotImage = fusumaShotImage != nil ? fusumaShotImage : UIImage(named: "ic_radio_button_checked_white_24px", in: bundle, compatibleWith: nil)
         
         if(fusumaTintIcons) {
             flashButton.tintColor = fusumaBaseTintColor

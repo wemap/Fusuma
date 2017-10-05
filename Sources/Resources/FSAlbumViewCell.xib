@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -21,7 +21,7 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eyB-Pn-Cz7">
                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                     </imageView>
-                    <imageView hidden="YES" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_videocam" translatesAutoresizingMaskIntoConstraints="NO" id="ADV-WS-yRJ">
+                    <imageView hidden="YES" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_videocam_white_36pt.png" translatesAutoresizingMaskIntoConstraints="NO" id="ADV-WS-yRJ">
                         <rect key="frame" x="28" y="30" width="20" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="ERC-bt-DmR"/>
@@ -30,6 +30,7 @@
                     </imageView>
                 </subviews>
             </view>
+            <color key="backgroundColor" red="0.23137254900000001" green="0.23921568630000001" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="ADV-WS-yRJ" secondAttribute="trailing" constant="2" id="7hq-pZ-4yS"/>
                 <constraint firstAttribute="bottom" secondItem="eyB-Pn-Cz7" secondAttribute="bottom" id="7nt-Ev-pzc"/>
@@ -46,6 +47,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="ic_videocam" width="36" height="36"/>
+        <image name="ic_videocam_white_36pt.png" width="36" height="36"/>
     </resources>
 </document>

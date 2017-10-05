@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,7 +18,7 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SZ8-Sp-jjd">
                     <rect key="frame" x="0.0" y="50" width="400" height="450"/>
-                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.23137254900000001" green="0.23921568630000001" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="SZ8-Sp-jjd" secondAttribute="height" multiplier="3:4" priority="750" id="50d-Ra-Hof"/>
                     </constraints>
@@ -33,7 +33,7 @@
                                 <constraint firstAttribute="width" constant="68" id="rPk-4D-nfg"/>
                             </constraints>
                             <inset key="contentEdgeInsets" minX="2" minY="2" maxX="2" maxY="2"/>
-                            <state key="normal" image="shutter_button"/>
+                            <state key="normal" image="ic_radio_button_checked_white_24px.png"/>
                             <connections>
                                 <action selector="shotButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="NK4-1d-Pf0"/>
                             </connections>
@@ -45,7 +45,7 @@
                                 <constraint firstAttribute="height" constant="40" id="m8M-Pd-ZIT"/>
                             </constraints>
                             <inset key="contentEdgeInsets" minX="2" minY="2" maxX="2" maxY="2"/>
-                            <state key="normal" image="ic_loop"/>
+                            <state key="normal" image="ic_loop_white_48pt.png"/>
                             <connections>
                                 <action selector="flipButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="zY0-B4-jSZ"/>
                             </connections>
@@ -57,13 +57,13 @@
                                 <constraint firstAttribute="height" constant="40" id="kNB-bN-eie"/>
                             </constraints>
                             <inset key="contentEdgeInsets" minX="2" minY="2" maxX="2" maxY="2"/>
-                            <state key="normal" image="ic_flash_off"/>
+                            <state key="normal" image="ic_flash_off_white_48pt.png"/>
                             <connections>
                                 <action selector="flashButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="GRd-6l-pEk"/>
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.23137254900000001" green="0.23921568630000001" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="o8l-Ld-Oon" firstAttribute="centerX" secondItem="oUi-qP-Neb" secondAttribute="centerX" id="2uy-UJ-fI0"/>
                         <constraint firstAttribute="trailing" secondItem="De1-Cg-kBb" secondAttribute="trailing" constant="15" id="7HT-h5-nDc"/>
@@ -79,7 +79,7 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.23137254900000001" green="0.23921568630000001" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="VkA-a9-fNh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="7Ew-Db-fRs"/>
                 <constraint firstAttribute="bottom" secondItem="oUi-qP-Neb" secondAttribute="bottom" id="7zn-vY-NCd"/>
@@ -107,8 +107,8 @@
         </view>
     </objects>
     <resources>
-        <image name="ic_flash_off" width="48" height="48"/>
-        <image name="ic_loop" width="48" height="48"/>
-        <image name="shutter_button" width="40" height="40"/>
+        <image name="ic_flash_off_white_48pt.png" width="48" height="48"/>
+        <image name="ic_loop_white_48pt.png" width="48" height="48"/>
+        <image name="ic_radio_button_checked_white_24px.png" width="40" height="40"/>
     </resources>
 </document>

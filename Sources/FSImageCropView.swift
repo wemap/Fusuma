@@ -125,8 +125,7 @@ final class FSImageCropView: UIScrollView {
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
-        
-        self.backgroundColor = fusumaBackgroundColor
+
         self.frame.size      = CGSize.zero
         self.clipsToBounds   = true
         self.imageView.alpha = 0.0

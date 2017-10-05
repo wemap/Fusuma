@@ -48,8 +48,6 @@ final class FSVideoCameraView: UIView {
             return
         }
         
-        self.backgroundColor = fusumaBackgroundColor
-        
         self.isHidden = false
         
         // AVCapture
@@ -122,12 +120,11 @@ final class FSVideoCameraView: UIView {
         
         let bundle = Bundle(for: self.classForCoder)
         
-        flashOnImage = fusumaFlashOnImage != nil ? fusumaFlashOnImage : UIImage(named: "ic_flash_on", in: bundle, compatibleWith: nil)
-        flashOffImage = fusumaFlashOffImage != nil ? fusumaFlashOffImage : UIImage(named: "ic_flash_off", in: bundle, compatibleWith: nil)
-        let flipImage = fusumaFlipImage != nil ? fusumaFlipImage : UIImage(named: "ic_loop", in: bundle, compatibleWith: nil)
-        videoStartImage = fusumaVideoStartImage != nil ? fusumaVideoStartImage : UIImage(named: "video_button", in: bundle, compatibleWith: nil)
-        videoStopImage = fusumaVideoStopImage != nil ? fusumaVideoStopImage : UIImage(named: "video_button_rec", in: bundle, compatibleWith: nil)
-
+        flashOnImage = fusumaFlashOnImage != nil ? fusumaFlashOnImage : UIImage(named: "ic_flash_on_white_48pt", in: bundle, compatibleWith: nil)
+        flashOffImage = fusumaFlashOffImage != nil ? fusumaFlashOffImage : UIImage(named: "ic_flash_off_white_48pt", in: bundle, compatibleWith: nil)
+        let flipImage = fusumaFlipImage != nil ? fusumaFlipImage : UIImage(named: "ic_loop_white_48pt", in: bundle, compatibleWith: nil)
+        videoStartImage = fusumaVideoStartImage != nil ? fusumaVideoStartImage : UIImage(named: "button", in: bundle, compatibleWith: nil)
+        videoStopImage = fusumaVideoStopImage != nil ? fusumaVideoStopImage : UIImage(named: "button_recording", in: bundle, compatibleWith: nil)
         
         if(fusumaTintIcons) {
             flashButton.tintColor = fusumaBaseTintColor
