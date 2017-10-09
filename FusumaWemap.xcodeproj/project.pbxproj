@@ -99,7 +99,7 @@
 		12F906C71F863A2E00464027 /* ic_photo_white_36pt@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_photo_white_36pt@2x.png"; sourceTree = "<group>"; };
 		12F906C81F863A2E00464027 /* ic_photo_white_36pt@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_photo_white_36pt@3x.png"; sourceTree = "<group>"; };
 		12F906C91F863A2E00464027 /* ic_flash_on_white_48pt@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_flash_on_white_48pt@3x.png"; sourceTree = "<group>"; };
-		52412A931CA6114A0073C4BE /* Fusuma.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Fusuma.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		52412A931CA6114A0073C4BE /* FusumaWemap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FusumaWemap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52412A961CA6114A0073C4BE /* Fusuma.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Fusuma.h; sourceTree = "<group>"; };
 		52412A981CA6114A0073C4BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EDDC0B3C1D04F53E009135DB /* FSVideoCameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSVideoCameraView.swift; sourceTree = "<group>"; };
@@ -200,7 +200,7 @@
 		52412A941CA6114A0073C4BE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				52412A931CA6114A0073C4BE /* Fusuma.framework */,
+				52412A931CA6114A0073C4BE /* FusumaWemap.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -245,9 +245,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		52412A921CA6114A0073C4BE /* Fusuma */ = {
+		52412A921CA6114A0073C4BE /* FusumaWemap */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 52412A9B1CA6114A0073C4BE /* Build configuration list for PBXNativeTarget "Fusuma" */;
+			buildConfigurationList = 52412A9B1CA6114A0073C4BE /* Build configuration list for PBXNativeTarget "FusumaWemap" */;
 			buildPhases = (
 				52412A8E1CA6114A0073C4BE /* Sources */,
 				52412A8F1CA6114A0073C4BE /* Frameworks */,
@@ -258,9 +258,9 @@
 			);
 			dependencies = (
 			);
-			name = Fusuma;
+			name = FusumaWemap;
 			productName = Fusuma;
-			productReference = 52412A931CA6114A0073C4BE /* Fusuma.framework */;
+			productReference = 52412A931CA6114A0073C4BE /* FusumaWemap.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -278,7 +278,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 52412A8D1CA6114A0073C4BE /* Build configuration list for PBXProject "Fusuma" */;
+			buildConfigurationList = 52412A8D1CA6114A0073C4BE /* Build configuration list for PBXProject "FusumaWemap" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -290,7 +290,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				52412A921CA6114A0073C4BE /* Fusuma */,
+				52412A921CA6114A0073C4BE /* FusumaWemap */,
 			);
 		};
 /* End PBXProject section */
@@ -504,7 +504,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		52412A8D1CA6114A0073C4BE /* Build configuration list for PBXProject "Fusuma" */ = {
+		52412A8D1CA6114A0073C4BE /* Build configuration list for PBXProject "FusumaWemap" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				52412A991CA6114A0073C4BE /* Debug */,
@@ -513,7 +513,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		52412A9B1CA6114A0073C4BE /* Build configuration list for PBXNativeTarget "Fusuma" */ = {
+		52412A9B1CA6114A0073C4BE /* Build configuration list for PBXNativeTarget "FusumaWemap" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				52412A9C1CA6114A0073C4BE /* Debug */,

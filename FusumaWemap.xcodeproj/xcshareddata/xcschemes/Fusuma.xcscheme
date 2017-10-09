@@ -17,7 +17,7 @@
                BlueprintIdentifier = "52412A921CA6114A0073C4BE"
                BuildableName = "Fusuma.framework"
                BlueprintName = "Fusuma"
-               ReferencedContainer = "container:Fusuma.xcodeproj">
+               ReferencedContainer = "container:FusumaWemap.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -26,6 +26,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
@@ -36,6 +37,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -48,7 +50,7 @@
             BlueprintIdentifier = "52412A921CA6114A0073C4BE"
             BuildableName = "Fusuma.framework"
             BlueprintName = "Fusuma"
-            ReferencedContainer = "container:Fusuma.xcodeproj">
+            ReferencedContainer = "container:FusumaWemap.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -66,7 +68,7 @@
             BlueprintIdentifier = "52412A921CA6114A0073C4BE"
             BuildableName = "Fusuma.framework"
             BlueprintName = "Fusuma"
-            ReferencedContainer = "container:Fusuma.xcodeproj">
+            ReferencedContainer = "container:FusumaWemap.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

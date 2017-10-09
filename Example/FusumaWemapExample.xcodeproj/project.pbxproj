@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		038058758CB885BF47B829B3 /* Pods_FusumaWemapExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31275AD61D27BD05537F2C6C /* Pods_FusumaWemapExample.framework */; };
 		52412AC41CA61C9F0073C4BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52412AC31CA61C9F0073C4BE /* AppDelegate.swift */; };
 		52412AC61CA61C9F0073C4BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52412AC51CA61C9F0073C4BE /* ViewController.swift */; };
 		52412AC91CA61C9F0073C4BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52412AC71CA61C9F0073C4BE /* Main.storyboard */; };
@@ -16,7 +17,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		52412AC01CA61C9F0073C4BE /* FusumaExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FusumaExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0CE33059C903777F2FACBE60 /* Pods-FusumaWemapExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FusumaWemapExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FusumaWemapExample/Pods-FusumaWemapExample.debug.xcconfig"; sourceTree = "<group>"; };
+		31275AD61D27BD05537F2C6C /* Pods_FusumaWemapExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FusumaWemapExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4586E05D98D1DE453D4719C3 /* Pods-FusumaWemapExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FusumaWemapExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-FusumaWemapExample/Pods-FusumaWemapExample.release.xcconfig"; sourceTree = "<group>"; };
+		52412AC01CA61C9F0073C4BE /* FusumaWemapExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FusumaWemapExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52412AC31CA61C9F0073C4BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52412AC51CA61C9F0073C4BE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		52412AC81CA61C9F0073C4BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -34,6 +38,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C26F0A01C62C5F8E4DA437DF /* Pods_FusumaExample.framework in Frameworks */,
+				038058758CB885BF47B829B3 /* Pods_FusumaWemapExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +49,7 @@
 			isa = PBXGroup;
 			children = (
 				81B33B0DEB81DA31E1FB4FDA /* Pods_FusumaExample.framework */,
+				31275AD61D27BD05537F2C6C /* Pods_FusumaWemapExample.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -61,7 +67,7 @@
 		52412AC11CA61C9F0073C4BE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				52412AC01CA61C9F0073C4BE /* FusumaExample.app */,
+				52412AC01CA61C9F0073C4BE /* FusumaWemapExample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -84,6 +90,8 @@
 			children = (
 				C67A971520B27A4DC3676701 /* Pods-FusumaExample.debug.xcconfig */,
 				E36708C0F50A4BE48BB978E3 /* Pods-FusumaExample.release.xcconfig */,
+				0CE33059C903777F2FACBE60 /* Pods-FusumaWemapExample.debug.xcconfig */,
+				4586E05D98D1DE453D4719C3 /* Pods-FusumaWemapExample.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -91,9 +99,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		52412ABF1CA61C9F0073C4BE /* FusumaExample */ = {
+		52412ABF1CA61C9F0073C4BE /* FusumaWemapExample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 52412AD21CA61C9F0073C4BE /* Build configuration list for PBXNativeTarget "FusumaExample" */;
+			buildConfigurationList = 52412AD21CA61C9F0073C4BE /* Build configuration list for PBXNativeTarget "FusumaWemapExample" */;
 			buildPhases = (
 				26FDCB2FBB7227ED868379A3 /* [CP] Check Pods Manifest.lock */,
 				52412ABC1CA61C9F0073C4BE /* Sources */,
@@ -106,9 +114,9 @@
 			);
 			dependencies = (
 			);
-			name = FusumaExample;
+			name = FusumaWemapExample;
 			productName = FusumaExample;
-			productReference = 52412AC01CA61C9F0073C4BE /* FusumaExample.app */;
+			productReference = 52412AC01CA61C9F0073C4BE /* FusumaWemapExample.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -127,7 +135,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 52412ABB1CA61C9F0073C4BE /* Build configuration list for PBXProject "FusumaExample" */;
+			buildConfigurationList = 52412ABB1CA61C9F0073C4BE /* Build configuration list for PBXProject "FusumaWemapExample" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -140,7 +148,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				52412ABF1CA61C9F0073C4BE /* FusumaExample */,
+				52412ABF1CA61C9F0073C4BE /* FusumaWemapExample */,
 			);
 		};
 /* End PBXProject section */
@@ -170,7 +178,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-FusumaExample-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-FusumaWemapExample-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -183,16 +191,16 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-FusumaExample/Pods-FusumaExample-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Fusuma/Fusuma.framework",
+				"${SRCROOT}/Pods/Target Support Files/Pods-FusumaWemapExample/Pods-FusumaWemapExample-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FusumaWemap/FusumaWemap.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Fusuma.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FusumaWemap.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FusumaExample/Pods-FusumaExample-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FusumaWemapExample/Pods-FusumaWemapExample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FB8B24C06F66F6071B77C74A /* [CP] Copy Pods Resources */ = {
@@ -207,7 +215,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FusumaExample/Pods-FusumaExample-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FusumaWemapExample/Pods-FusumaWemapExample-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -338,7 +346,7 @@
 		};
 		52412AD31CA61C9F0073C4BE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C67A971520B27A4DC3676701 /* Pods-FusumaExample.debug.xcconfig */;
+			baseConfigurationReference = 0CE33059C903777F2FACBE60 /* Pods-FusumaWemapExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 64DXV5M5R8;
@@ -353,7 +361,7 @@
 		};
 		52412AD41CA61C9F0073C4BE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E36708C0F50A4BE48BB978E3 /* Pods-FusumaExample.release.xcconfig */;
+			baseConfigurationReference = 4586E05D98D1DE453D4719C3 /* Pods-FusumaWemapExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 64DXV5M5R8;
@@ -368,7 +376,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		52412ABB1CA61C9F0073C4BE /* Build configuration list for PBXProject "FusumaExample" */ = {
+		52412ABB1CA61C9F0073C4BE /* Build configuration list for PBXProject "FusumaWemapExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				52412AD01CA61C9F0073C4BE /* Debug */,
@@ -377,7 +385,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		52412AD21CA61C9F0073C4BE /* Build configuration list for PBXNativeTarget "FusumaExample" */ = {
+		52412AD21CA61C9F0073C4BE /* Build configuration list for PBXNativeTarget "FusumaWemapExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				52412AD31CA61C9F0073C4BE /* Debug */,

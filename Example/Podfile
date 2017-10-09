@@ -2,7 +2,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 platform :ios, '9.0'
 
-target 'FusumaExample' do
-  project 'FusumaExample.xcodeproj'
-  pod 'Fusuma', :path => '../'
+target 'FusumaWemapExample' do
+  project 'FusumaWemapExample.xcodeproj'
+  pod 'FusumaWemap', :path => '../'
 end
