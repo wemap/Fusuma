@@ -9,7 +9,6 @@
 import UIKit
 import AVFoundation
 import CoreMotion
-import Photos
 
 @objc protocol FSCameraViewDelegate: class {
     func cameraShotFinished(_ image: UIImage)
@@ -24,19 +23,22 @@ final class FSCameraView: UIView, UIGestureRecognizerDelegate {
     @IBOutlet weak var fullAspectRatioConstraint: NSLayoutConstraint!
     var croppedAspectRatioConstraint: NSLayoutConstraint?
     
+    @IBOutlet weak var circleCropView: FSAlbumCircleCropView!
+    
     weak var delegate: FSCameraViewDelegate? = nil
     
-    var session: AVCaptureSession?
-    var device: AVCaptureDevice?
-    var videoInput: AVCaptureDeviceInput?
-    var imageOutput: AVCaptureStillImageOutput?
-    var focusView: UIView?
+    fileprivate var session: AVCaptureSession?
+    fileprivate var device: AVCaptureDevice?
+    fileprivate var videoInput: AVCaptureDeviceInput?
+    fileprivate var imageOutput: AVCaptureStillImageOutput?
+    fileprivate var videoLayer: AVCaptureVideoPreviewLayer?
+    fileprivate var focusView: UIView?
 
-    var flashOffImage: UIImage?
-    var flashOnImage: UIImage?
+    fileprivate var flashOffImage: UIImage?
+    fileprivate var flashOnImage: UIImage?
     
-    var motionManager: CMMotionManager?
-    var currentDeviceOrientation: UIDeviceOrientation?
+    fileprivate var motionManager: CMMotionManager?
+    fileprivate var currentDeviceOrientation: UIDeviceOrientation?
     
     static func instance() -> FSCameraView {
         
@@ -50,14 +52,14 @@ final class FSCameraView: UIView, UIGestureRecognizerDelegate {
             return
         }
         
-        self.backgroundColor = fusumaBackgroundColor
-        
+        circleCropView.isHidden = fusumaCropMode == .rectangle
+
         let bundle = Bundle(for: self.classForCoder)
-        
-        flashOnImage = fusumaFlashOnImage != nil ? fusumaFlashOnImage : UIImage(named: "ic_flash_on", in: bundle, compatibleWith: nil)
-        flashOffImage = fusumaFlashOffImage != nil ? fusumaFlashOffImage : UIImage(named: "ic_flash_off", in: bundle, compatibleWith: nil)
-        let flipImage = fusumaFlipImage != nil ? fusumaFlipImage : UIImage(named: "ic_loop", in: bundle, compatibleWith: nil)
-        let shotImage = fusumaShotImage != nil ? fusumaShotImage : UIImage(named: "ic_radio_button_checked", in: bundle, compatibleWith: nil)
+
+        flashOnImage = fusumaFlashOnImage != nil ? fusumaFlashOnImage : UIImage(named: "ic_flash_on_white_48pt", in: bundle, compatibleWith: nil)
+        flashOffImage = fusumaFlashOffImage != nil ? fusumaFlashOffImage : UIImage(named: "ic_flash_off_white_48pt", in: bundle, compatibleWith: nil)
+        let flipImage = fusumaFlipImage != nil ? fusumaFlipImage : UIImage(named: "ic_loop_white_48pt", in: bundle, compatibleWith: nil)
+        let shotImage = fusumaShotImage != nil ? fusumaShotImage : UIImage(named: "ic_radio_button_checked_white_24px", in: bundle, compatibleWith: nil)
         
         if(fusumaTintIcons) {
             flashButton.tintColor = fusumaBaseTintColor
@@ -104,7 +106,7 @@ final class FSCameraView: UIView, UIGestureRecognizerDelegate {
                 
                 session.addOutput(imageOutput)
                 
-                let videoLayer = AVCaptureVideoPreviewLayer(session: session)
+                videoLayer = AVCaptureVideoPreviewLayer(session: session)
                 videoLayer?.frame = self.previewViewContainer.bounds
                 videoLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
                 
@@ -181,14 +183,7 @@ final class FSCameraView: UIView, UIGestureRecognizerDelegate {
         motionManager?.stopAccelerometerUpdates()
         currentDeviceOrientation = nil
     }
-
-    func saveImageToCameraRoll(image: UIImage) {
-        PHPhotoLibrary.shared().performChanges({
-            PHAssetChangeRequest.creationRequestForAsset(from: image)
-
-        }, completionHandler: nil)
-    }
-
+    
     @IBAction func shotButtonPressed(_ sender: UIButton) {
         
         guard let imageOutput = imageOutput else {
@@ -236,43 +231,24 @@ final class FSCameraView: UIView, UIGestureRecognizerDelegate {
                         ih = image.size.height
                     }
                     
-                    // Frame size
-                    let sw = self.previewViewContainer.frame.width
-                    
                     // The center coordinate along Y axis
                     let rcy = ih * 0.5
-
                     let imageRef = image.cgImage?.cropping(to: CGRect(x: rcy-iw*0.5, y: 0 , width: iw, height: iw))
-                    
-                    
                                         
                     DispatchQueue.main.async(execute: { () -> Void in
                         if fusumaCropImage {
-                            let resizedImage = UIImage(cgImage: imageRef!, scale: sw/iw, orientation: image.imageOrientation)
-                            delegate.cameraShotFinished(resizedImage)
-
-                            if fusumaSavesImage {
-                                self.saveImageToCameraRoll(image: resizedImage)
-                            }
-
+                            delegate.cameraShotFinished(UIImage(cgImage: imageRef!, scale: 1.0, orientation: image.imageOrientation))
                         } else {
                             delegate.cameraShotFinished(image)
-
-                            if fusumaSavesImage {
-                                self.saveImageToCameraRoll(image: image)
-                            }
                         }
                         
                         self.session       = nil
                         self.device        = nil
                         self.imageOutput   = nil
                         self.motionManager = nil
-                        
                     })
                 }
-                
             })
-            
         })
     }
     
@@ -337,15 +313,18 @@ final class FSCameraView: UIView, UIGestureRecognizerDelegate {
                 
                 let mode = device.flashMode
                 
-                if mode == AVCaptureFlashMode.off {
+                if mode == .off {
+                    if device.isFlashModeSupported(.on) {
+                        device.flashMode = .on
+                        flashButton.setImage(flashOnImage, for: UIControlState())
+                    }
                     
-                    device.flashMode = AVCaptureFlashMode.on
-                    flashButton.setImage(flashOnImage, for: UIControlState())
-                    
-                } else if mode == AVCaptureFlashMode.on {
-                    
-                    device.flashMode = AVCaptureFlashMode.off
-                    flashButton.setImage(flashOffImage, for: UIControlState())
+                } else
+                if mode == .on {
+                    if device.isFlashModeSupported(.off) {
+                        device.flashMode = .off
+                        flashButton.setImage(flashOffImage, for: UIControlState())
+                    }
                 }
                 
                 device.unlockForConfiguration()
@@ -423,9 +402,11 @@ extension FSCameraView {
                 
                 try device.lockForConfiguration()
                 
-                device.flashMode = AVCaptureFlashMode.off
-                flashButton.setImage(flashOffImage, for: UIControlState())
-                
+                if device.isFlashModeSupported(.off) {
+                    device.flashMode = .off
+                    flashButton.setImage(flashOffImage, for: UIControlState())
+                }
+
                 device.unlockForConfiguration()
                 
             }

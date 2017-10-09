@@ -1,0 +1,400 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		038058758CB885BF47B829B3 /* Pods_FusumaWemapExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31275AD61D27BD05537F2C6C /* Pods_FusumaWemapExample.framework */; };
+		52412AC41CA61C9F0073C4BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52412AC31CA61C9F0073C4BE /* AppDelegate.swift */; };
+		52412AC61CA61C9F0073C4BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52412AC51CA61C9F0073C4BE /* ViewController.swift */; };
+		52412AC91CA61C9F0073C4BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52412AC71CA61C9F0073C4BE /* Main.storyboard */; };
+		52412ACB1CA61C9F0073C4BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52412ACA1CA61C9F0073C4BE /* Assets.xcassets */; };
+		52412ACE1CA61C9F0073C4BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52412ACC1CA61C9F0073C4BE /* LaunchScreen.storyboard */; };
+		C26F0A01C62C5F8E4DA437DF /* Pods_FusumaExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81B33B0DEB81DA31E1FB4FDA /* Pods_FusumaExample.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0CE33059C903777F2FACBE60 /* Pods-FusumaWemapExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FusumaWemapExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FusumaWemapExample/Pods-FusumaWemapExample.debug.xcconfig"; sourceTree = "<group>"; };
+		31275AD61D27BD05537F2C6C /* Pods_FusumaWemapExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FusumaWemapExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4586E05D98D1DE453D4719C3 /* Pods-FusumaWemapExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FusumaWemapExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-FusumaWemapExample/Pods-FusumaWemapExample.release.xcconfig"; sourceTree = "<group>"; };
+		52412AC01CA61C9F0073C4BE /* FusumaWemapExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FusumaWemapExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		52412AC31CA61C9F0073C4BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		52412AC51CA61C9F0073C4BE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		52412AC81CA61C9F0073C4BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		52412ACA1CA61C9F0073C4BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		52412ACD1CA61C9F0073C4BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		52412ACF1CA61C9F0073C4BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		81B33B0DEB81DA31E1FB4FDA /* Pods_FusumaExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FusumaExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C67A971520B27A4DC3676701 /* Pods-FusumaExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FusumaExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FusumaExample/Pods-FusumaExample.debug.xcconfig"; sourceTree = "<group>"; };
+		E36708C0F50A4BE48BB978E3 /* Pods-FusumaExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FusumaExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-FusumaExample/Pods-FusumaExample.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		52412ABD1CA61C9F0073C4BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C26F0A01C62C5F8E4DA437DF /* Pods_FusumaExample.framework in Frameworks */,
+				038058758CB885BF47B829B3 /* Pods_FusumaWemapExample.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00B81F173E091370ACF4D47E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				81B33B0DEB81DA31E1FB4FDA /* Pods_FusumaExample.framework */,
+				31275AD61D27BD05537F2C6C /* Pods_FusumaWemapExample.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		52412AB71CA61C9F0073C4BE = {
+			isa = PBXGroup;
+			children = (
+				52412AC21CA61C9F0073C4BE /* FusumaExample */,
+				52412AC11CA61C9F0073C4BE /* Products */,
+				ED73B8B8D7B2CD1F90DCB864 /* Pods */,
+				00B81F173E091370ACF4D47E /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		52412AC11CA61C9F0073C4BE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				52412AC01CA61C9F0073C4BE /* FusumaWemapExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		52412AC21CA61C9F0073C4BE /* FusumaExample */ = {
+			isa = PBXGroup;
+			children = (
+				52412AC31CA61C9F0073C4BE /* AppDelegate.swift */,
+				52412AC51CA61C9F0073C4BE /* ViewController.swift */,
+				52412AC71CA61C9F0073C4BE /* Main.storyboard */,
+				52412ACA1CA61C9F0073C4BE /* Assets.xcassets */,
+				52412ACC1CA61C9F0073C4BE /* LaunchScreen.storyboard */,
+				52412ACF1CA61C9F0073C4BE /* Info.plist */,
+			);
+			path = FusumaExample;
+			sourceTree = "<group>";
+		};
+		ED73B8B8D7B2CD1F90DCB864 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C67A971520B27A4DC3676701 /* Pods-FusumaExample.debug.xcconfig */,
+				E36708C0F50A4BE48BB978E3 /* Pods-FusumaExample.release.xcconfig */,
+				0CE33059C903777F2FACBE60 /* Pods-FusumaWemapExample.debug.xcconfig */,
+				4586E05D98D1DE453D4719C3 /* Pods-FusumaWemapExample.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		52412ABF1CA61C9F0073C4BE /* FusumaWemapExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52412AD21CA61C9F0073C4BE /* Build configuration list for PBXNativeTarget "FusumaWemapExample" */;
+			buildPhases = (
+				26FDCB2FBB7227ED868379A3 /* [CP] Check Pods Manifest.lock */,
+				52412ABC1CA61C9F0073C4BE /* Sources */,
+				52412ABD1CA61C9F0073C4BE /* Frameworks */,
+				52412ABE1CA61C9F0073C4BE /* Resources */,
+				F3861906B728B7A5CF8341A1 /* [CP] Embed Pods Frameworks */,
+				FB8B24C06F66F6071B77C74A /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FusumaWemapExample;
+			productName = FusumaExample;
+			productReference = 52412AC01CA61C9F0073C4BE /* FusumaWemapExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		52412AB81CA61C9F0073C4BE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = ytakzk;
+				TargetAttributes = {
+					52412ABF1CA61C9F0073C4BE = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 64DXV5M5R8;
+					};
+				};
+			};
+			buildConfigurationList = 52412ABB1CA61C9F0073C4BE /* Build configuration list for PBXProject "FusumaWemapExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 52412AB71CA61C9F0073C4BE;
+			productRefGroup = 52412AC11CA61C9F0073C4BE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				52412ABF1CA61C9F0073C4BE /* FusumaWemapExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		52412ABE1CA61C9F0073C4BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52412ACE1CA61C9F0073C4BE /* LaunchScreen.storyboard in Resources */,
+				52412ACB1CA61C9F0073C4BE /* Assets.xcassets in Resources */,
+				52412AC91CA61C9F0073C4BE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		26FDCB2FBB7227ED868379A3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FusumaWemapExample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F3861906B728B7A5CF8341A1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FusumaWemapExample/Pods-FusumaWemapExample-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FusumaWemap/FusumaWemap.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FusumaWemap.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FusumaWemapExample/Pods-FusumaWemapExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FB8B24C06F66F6071B77C74A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FusumaWemapExample/Pods-FusumaWemapExample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		52412ABC1CA61C9F0073C4BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52412AC61CA61C9F0073C4BE /* ViewController.swift in Sources */,
+				52412AC41CA61C9F0073C4BE /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		52412AC71CA61C9F0073C4BE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				52412AC81CA61C9F0073C4BE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		52412ACC1CA61C9F0073C4BE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				52412ACD1CA61C9F0073C4BE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		52412AD01CA61C9F0073C4BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		52412AD11CA61C9F0073C4BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		52412AD31CA61C9F0073C4BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0CE33059C903777F2FACBE60 /* Pods-FusumaWemapExample.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 64DXV5M5R8;
+				INFOPLIST_FILE = FusumaExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.maaap.FusumaExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		52412AD41CA61C9F0073C4BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4586E05D98D1DE453D4719C3 /* Pods-FusumaWemapExample.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 64DXV5M5R8;
+				INFOPLIST_FILE = FusumaExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.maaap.FusumaExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		52412ABB1CA61C9F0073C4BE /* Build configuration list for PBXProject "FusumaWemapExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52412AD01CA61C9F0073C4BE /* Debug */,
+				52412AD11CA61C9F0073C4BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52412AD21CA61C9F0073C4BE /* Build configuration list for PBXNativeTarget "FusumaWemapExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52412AD31CA61C9F0073C4BE /* Debug */,
+				52412AD41CA61C9F0073C4BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 52412AB81CA61C9F0073C4BE /* Project object */;
+}

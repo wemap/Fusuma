@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import AVFoundation
+import Fusuma
 
-class ViewController: UIViewController, FusumaDelegate {
+class ViewController: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView!
     
@@ -32,15 +34,18 @@ class ViewController: UIViewController, FusumaDelegate {
         // Show Fusuma
         let fusuma = FusumaViewController()
         
-        //        fusumaCropImage = false
+        fusumaCropImage = true
+//        fusumaCropMode = .circle
+
         fusuma.hasVideo = true
         fusuma.delegate = self
-        fusuma.cropHeightRatio = 0.6
-        fusumaSavesImage = true
+//        fusuma.cropHeightRatio = 0.6
 
         self.present(fusuma, animated: true)
     }
-    
+}
+
+extension ViewController: FusumaDelegate {
     // MARK: FusumaDelegate Protocol
     func fusumaImageSelected(_ image: UIImage, source: FusumaMode) {
         switch source {
@@ -54,21 +59,10 @@ class ViewController: UIViewController, FusumaDelegate {
         
         imageView.image = image
     }
-
-    func fusumaImageSelected(_ image: UIImage, source: FusumaMode, metaData: ImageMetadata) {
-        print("Image mediatype: \(metaData.mediaType)")
-        print("Source image size: \(metaData.pixelWidth)x\(metaData.pixelHeight)")
-        print("Creation date: \(metaData.creationDate)")
-        print("Modification date: \(metaData.modificationDate)")
-        print("Video duration: \(metaData.duration)")
-        print("Is favourite: \(metaData.isFavourite)")
-        print("Is hidden: \(metaData.isHidden)")
-        print("Location: \(metaData.location)")
-    }
-
-    func fusumaVideoCompleted(withFileURL fileURL: URL) {
-        print("video completed and output to file: \(fileURL)")
-        self.fileUrlLabel.text = "file output to: \(fileURL.absoluteString)"
+    
+    func fusumaVideoCompleted(_ video: AVAsset) {
+        print("video completed ")
+        self.fileUrlLabel.text = "video completed: \(video)"
     }
     
     func fusumaDismissedWithImage(_ image: UIImage, source: FusumaMode) {
@@ -107,7 +101,7 @@ class ViewController: UIViewController, FusumaDelegate {
         print("Called when the FusumaViewController disappeared")
     }
     
-    func fusumaWillClosed() {
+    func fusumaWillClose() {
         print("Called when the close button is pressed")
     }
 
