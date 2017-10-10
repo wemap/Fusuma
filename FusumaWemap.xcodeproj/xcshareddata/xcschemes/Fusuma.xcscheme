@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "52412A921CA6114A0073C4BE"
-               BuildableName = "Fusuma.framework"
-               BlueprintName = "Fusuma"
+               BuildableName = "FusumaWemap.framework"
+               BlueprintName = "FusumaWemap"
                ReferencedContainer = "container:FusumaWemap.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -48,8 +48,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "52412A921CA6114A0073C4BE"
-            BuildableName = "Fusuma.framework"
-            BlueprintName = "Fusuma"
+            BuildableName = "FusumaWemap.framework"
+            BlueprintName = "FusumaWemap"
             ReferencedContainer = "container:FusumaWemap.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -66,8 +66,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "52412A921CA6114A0073C4BE"
-            BuildableName = "Fusuma.framework"
-            BlueprintName = "Fusuma"
+            BuildableName = "FusumaWemap.framework"
+            BlueprintName = "FusumaWemap"
             ReferencedContainer = "container:FusumaWemap.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
