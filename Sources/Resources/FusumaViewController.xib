@@ -15,7 +15,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FusumaViewController" customModule="Fusuma" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FusumaViewController" customModule="FusumaWemap" customModuleProvider="target">
             <connections>
                 <outlet property="cameraButton" destination="sCN-QB-mCu" id="tC3-i4-xpG"/>
                 <outlet property="cameraShotContainer" destination="CFH-FU-LPW" id="gvI-wh-cln"/>

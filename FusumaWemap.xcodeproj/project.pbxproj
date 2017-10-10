@@ -11,7 +11,6 @@
 		12D778731F8CB4860037CAF2 /* FSAlbumViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12F906341F8631F600464027 /* FSAlbumViewCell.xib */; };
 		12D778741F8CB4860037CAF2 /* FSCameraView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12F906351F8631F600464027 /* FSCameraView.xib */; };
 		12D778751F8CB4860037CAF2 /* FSVideoCameraView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12F906321F8631F500464027 /* FSVideoCameraView.xib */; };
-		12D778761F8CB4860037CAF2 /* FusumaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12F906361F8631F600464027 /* FusumaViewController.xib */; };
 		12D778771F8CB48D0037CAF2 /* ic_check_white_48pt.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F906B31F863A2B00464027 /* ic_check_white_48pt.png */; };
 		12D778781F8CB48D0037CAF2 /* ic_check_white_48pt@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F906BA1F863A2C00464027 /* ic_check_white_48pt@2x.png */; };
 		12D778791F8CB48D0037CAF2 /* ic_check_white_48pt@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F906C11F863A2D00464027 /* ic_check_white_48pt@3x.png */; };
@@ -57,6 +56,7 @@
 		12D778A11F8CB4940037CAF2 /* FSImageCropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDC0B531D0511F2009135DB /* FSImageCropView.swift */; };
 		12D778A21F8CB4940037CAF2 /* FSVideoCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDC0B3C1D04F53E009135DB /* FSVideoCameraView.swift */; };
 		12D778A31F8CB4940037CAF2 /* FusumaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDC0B481D0511E7009135DB /* FusumaViewController.swift */; };
+		12F0F3201F8CBEA600E612C3 /* FusumaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12F906361F8631F600464027 /* FusumaViewController.xib */; };
 		52412A971CA6114A0073C4BE /* Fusuma.h in Headers */ = {isa = PBXBuildFile; fileRef = 52412A961CA6114A0073C4BE /* Fusuma.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -324,6 +324,7 @@
 				12D778911F8CB48D0037CAF2 /* ic_radio_button_checked_white_24px@3x.png in Resources */,
 				12D778881F8CB48D0037CAF2 /* ic_loop_white_48pt@3x.png in Resources */,
 				12D7787E1F8CB48D0037CAF2 /* ic_flash_auto_white_48pt@2x.png in Resources */,
+				12F0F3201F8CBEA600E612C3 /* FusumaViewController.xib in Resources */,
 				12D7787D1F8CB48D0037CAF2 /* ic_flash_auto_white_48pt.png in Resources */,
 				12D778901F8CB48D0037CAF2 /* ic_radio_button_checked_white_24px@2x.png in Resources */,
 				12D7787B1F8CB48D0037CAF2 /* ic_close_white_48pt@2x.png in Resources */,
@@ -334,7 +335,6 @@
 				12D778771F8CB48D0037CAF2 /* ic_check_white_48pt.png in Resources */,
 				12D7787F1F8CB48D0037CAF2 /* ic_flash_auto_white_48pt@3x.png in Resources */,
 				12D778941F8CB48D0037CAF2 /* ic_videocam_white_36pt@3x.png in Resources */,
-				12D778761F8CB4860037CAF2 /* FusumaViewController.xib in Resources */,
 				12D778961F8CB48D0037CAF2 /* button_recording@2x.png in Resources */,
 				12D778921F8CB48D0037CAF2 /* ic_videocam_white_36pt.png in Resources */,
 				12D778811F8CB48D0037CAF2 /* ic_flash_off_white_48pt@2x.png in Resources */,
