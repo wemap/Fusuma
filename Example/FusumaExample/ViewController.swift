@@ -8,7 +8,7 @@
 
 import UIKit
 import AVFoundation
-import Fusuma
+import FusumaWemap
 
 class ViewController: UIViewController {
     

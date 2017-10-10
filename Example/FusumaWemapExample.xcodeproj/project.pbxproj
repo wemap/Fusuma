@@ -13,7 +13,6 @@
 		52412AC91CA61C9F0073C4BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52412AC71CA61C9F0073C4BE /* Main.storyboard */; };
 		52412ACB1CA61C9F0073C4BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52412ACA1CA61C9F0073C4BE /* Assets.xcassets */; };
 		52412ACE1CA61C9F0073C4BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52412ACC1CA61C9F0073C4BE /* LaunchScreen.storyboard */; };
-		C26F0A01C62C5F8E4DA437DF /* Pods_FusumaExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81B33B0DEB81DA31E1FB4FDA /* Pods_FusumaExample.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +36,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C26F0A01C62C5F8E4DA437DF /* Pods_FusumaExample.framework in Frameworks */,
 				038058758CB885BF47B829B3 /* Pods_FusumaWemapExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
