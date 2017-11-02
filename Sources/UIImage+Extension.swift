@@ -6,7 +6,7 @@
 //  Copyright © 2017 ytakzk. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 extension UIImage {
     func cropCircle(size: CGSize) -> UIImage? {
